@@ -7,10 +7,10 @@ int main() {
     fs_init(&fs);
     fs_print_free_space(&fs);
 
-    block_index root = fs_create_dir(&fs, 0, "root");
-    block_index home = fs_create_dir(&fs, root, "dir");
-    fs_create_file(&fs, home, "readme.txt");
-    fs_create_file(&fs, home, "file2.txt");
+    block_index root = fs_create_entry(&fs, 0, "root", E_DIR);
+    block_index home = fs_create_entry(&fs, root, "dir", E_DIR);
+    fs_create_entry(&fs, home, "readme.txt", E_FILE);
+    fs_create_entry(&fs, home, "file2.txt", E_FILE);
 
     printf("\n");
     fs_list_dir(&fs, home);
