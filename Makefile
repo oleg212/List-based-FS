@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -std=c99 -I./src/fs -I./src/blocks -I./src/superblock
+CFLAGS = -g -Wall -Wextra -std=c99 -I./src/fs -I./src/blocks -I./src/superblock
 
 # SRC = src/*.c \ #
 SRC = src/main.c  \

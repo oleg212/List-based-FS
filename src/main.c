@@ -7,8 +7,8 @@ int main() {
     fs_init(&fs);
     fs_print_free_space(&fs);
 
-    block_index root = fs_create_dir(&fs, 0);
-    block_index home = fs_create_dir(&fs, root);
+    block_index root = fs_create_dir(&fs, 0, "root");
+    block_index home = fs_create_dir(&fs, root, "dir");
     fs_create_file(&fs, home, "readme.txt");
     fs_create_file(&fs, home, "file2.txt");
 
